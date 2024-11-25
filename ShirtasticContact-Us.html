@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shirtastic Contact Us</title>
+    <link rel="shortcut icon" href="ShirtasticLogo.jpg" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url("https://static.vecteezy.com/system/resources/previews/027/807/254/non_2x/t-shirts-mockup-with-text-space-on-colrful-background-hd-ai-free-photo.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+        }
+
+        /* Header Styles */
+    header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        nav .logo {
+            padding: 5px 10px;
+            height: 50px;
+            float: left;
+            text-transform: uppercase;
+            font-size: 1.5rem; /* Increased from 1.2rem */
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            float: right;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li a {
+            line-height: 50px;
+            color: #fff;
+            padding: 5px 15px;
+            text-decoration: none;
+            font-size: 14px; /* Increased from 10px */
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            background: rgba(0,0,0,0.7);
+            border-radius: 6px;
+        }
+
+        nav .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .container {
+            background: rgba(5, 5, 5, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            max-width: 600px;
+            margin: 50px auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            margin-right: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        #response-message {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: #fff;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Shirtastic</div>
+            <ul class="nav-links">
+                <li><a href="ShirtasticHome.html">Home</a></li>
+                <li><a href="ShirtasticAbout-Us.html">About</a></li>
+                <li><a href="ShirtasticContact-Us.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>If you have any questions about our T-shirt products, feel free to ask question to reach out!</p>
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+        <div id="response-message"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Shirtastic. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#contact-form').on('submit', function(event) {
+                event.preventDefault();
+
+                const name = $('#name').val();
+                const email = $('#email').val();
+                const message = $('#message').val();
+
+                if (name && email && message) {
+                    $('#response-message').html('<p>Thank you for your message, ' + name + '!</p>').css('color', 'green');
+
+                    $('#contact-form')[0].reset();
+                } else {
+                    $('#response-message').html('<p>Please fill in all fields.</p>').css('color', 'red');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

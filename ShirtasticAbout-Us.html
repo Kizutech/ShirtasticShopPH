@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shirtastic About</title>
+    <link rel="shortcut icon" href="ShirtasticLogo.jpg" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url("https://img.freepik.com/free-photo/multi-colored-shirts-hanging-modern-boutique-store-generated-by-ai_188544-43479.jpg?semt=ais_hybrid") no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+        }
+
+        .about-section {
+            background: rgba(5, 5, 5, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            max-width: 600px;
+            margin: 50px auto;
+        }
+
+        h1 {
+            color: #ffffff;
+            text-align: center;
+        }
+    h2 {
+        color:rgb(255, 255, 255);
+
+    }
+    h3 {
+        color:rgb(0, 0, 0);
+
+    }
+    .about-section {
+        color:rgb(252, 250, 250);
+
+    }
+    .team-member {
+        color: #000000;
+    }
+
+    /* Header Styles */
+    header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        nav .logo {
+            padding: 5px 10px;
+            height: 50px;
+            float: left;
+            text-transform: uppercase;
+            font-size: 1.5rem; /* Increased from 1.2rem */
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            float: right;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li a {
+            line-height: 50px;
+            color: #fff;
+            padding: 5px 15px;
+            text-decoration: none;
+            font-size: 14px; /* Increased from 10px */
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        nav ul li a:hover {
+            background: rgba(0,0,0,0.7);
+            border-radius: 6px;
+        }
+
+        nav .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+        }
+
+        nav .nav-links a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        button {
+            background-color: #f30909;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #333;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .team-member {
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #333;
+            color: #fff;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Shirtastic</div>
+            <ul class="nav-links">
+                <li><a href="ShirtasticHome.html">Home</a></li>
+                <li><a href="ShirtasticAbout-Us.html">About</a></li>
+                <li><a href="ShirtasticContact-Us.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="about-section">
+        <h1>About Us</h1>
+        <p>Fashioned Tees, now Made Easy</p>
+        <p>Shirtastic was established with the firm belief of designing unique custom t-shirts. We aim to achieve this by incorporating innovative designs and excellent customer service in our range of custom t-shirt options.</p>
+        <p>What Makes Us Different:</p>
+        <p>Wonderful Images: Our in-house graphic designers offer y’all with tons of unique designs that are consistent in style, whether it’s traditional, modern or outrageous.</p>
+        <p>Wellin Fabric: The basic fabric used here has been imported from American markets and yes even the stitching quality is top-notch.</p>
+        <p>Good Rates & Pricing: Our belief is that style is not for the rich only; fashion should be made scale.</p>
+        <p>One-Click Interface: For many the tedious act of searching to find the t shirt they once saw is a waste of time, to this end our website solves this issue brilliantly.</p>
+        <p>Shirtastic covers it all, whether you’re searching for t-shirts for casual usage, themed or even designer t shirts for holidays. Concepts of summertime, wintertime or Christmas t shirts are incorporated into the design.</p>
+        <p>Do not miss out on the chance and become part of the community of Shirtastic today.</p>
+        <br>
+        <button id="moreInfoBtn">Show Our Team</button>
+        <div id="teamInfo" class="hidden">
+            <h2>Our Team</h2>
+            <div class="team-member">
+                <h3>Renz Albert Sanchez</h3>
+            </div>
+            <div class="team-member">
+                <h3>Matthew Valencia</h3>
+            </div>
+            <div class="team-member">
+                <h3>Chaniel Daguplo</h3>
+            </div>
+            <div class="team-member">
+                <h3>Jiros M Firmanes</h3>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Shirtastic. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+    $("#moreInfoBtn").click(function() {
+        $("#teamInfo").slideToggle(1000);
+        $(this).text(function() {
+            return $(this).text() === "Show Our Team" ? "Show Less Our Team" : "Show Our Team";
+        });
+    });
+});
+    </script>
+</body>
+</html>
