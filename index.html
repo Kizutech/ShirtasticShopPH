@@ -93,7 +93,7 @@
         }
 
         .hero button {
-            background: #d11010;
+            background: #003bfd;
             color: #fff;
             border: none;
             padding: 0.5rem 1rem;
@@ -141,7 +141,7 @@
         }
 
         .product-card button {
-            background: #db0a0a;
+            background: #003bfd;
             color: #f8f8f8;
             border: none;
             padding: 0.5rem;
@@ -150,60 +150,81 @@
         }
 
         .popup {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        overflow: auto;
-        background-color: rgba(0,0,0,0.4);
-    }
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.5s;
+}
 
-    .popup-content {
-        background-color: #333;
-        margin: 15% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 80%;
-        max-width: 500px;
-        text-align: center;
-    }
+        .popup-content {
+            background-color: #444;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
-    .close {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-        cursor: pointer;
-    }
+        .close {
+            color: #fff;
+            float: right;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+        }
 
-    .close:hover,
-    .close:focus {
-        color: #fff;
-        text-decoration: none;
-        cursor: pointer;
-    }
+        .close:hover,
+        .close:focus {
+            color: #003bfd;
+            text-decoration: none;
+        }
 
-    #popupProductImage {
-        max-width: 200px;
-        margin-bottom: 10px;
-    }
+        #popupProductImage {
+            max-width: 100%;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
 
-    #addToCartBtn,
-    #buyNowBtn {
-        background: #db0a0a;
-        color: #f8f8f8;
-        border: none;
-        padding: 10px 20px;
-        margin: 10px 5px;
-        cursor: pointer;
-        border-radius: 5px;
-    }
+        #addToCartBtn,
+        #buyNowBtn {
+            background: #003bfd;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        #addToCartBtn:hover,
+        #buyNowBtn:hover {
+            background: #003bfd;
+        }
+
+        .no-scroll {
+            overflow: hidden;
+            height: 100%;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
 
     #cartButton {
-        background: #db0a0a;
+        background: #003bfd;
         color: #f8f8f8;
         border: none;
         padding: 0.5rem 1rem;
@@ -227,7 +248,7 @@
         <nav>
     <div class="logo">Shirtastic</div>
     <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
+        <li><a href="ShirtasticHome.html">Home</a></li>
         <li><a href="#products" class="shop-now">Shop</a></li>
         <li><a href="ShirtasticAbout-Us.html">About</a></li>
         <li><a href="ShirtasticContact-Us.html">Contact</a></li>
