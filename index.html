@@ -413,6 +413,15 @@
                 </div>
             </div>
             
+            <div id="cartContentsPopup" class="popup">
+                <div class="popup-content">
+                    <span class="close">&times;</span>
+                    <h3>Your Cart</h3>
+                    <div id="cartItems"></div>
+                    <button id="checkoutBtn">Checkout</button>
+                    <button id="clearCartBtn">Clear Cart</button>
+                </div>
+            </div>
     </main>
     
     <footer>
@@ -505,6 +514,56 @@
         }
     }
 </script>
+<script>
+    const cartContentsPopup = document.getElementById('cartContentsPopup');
+const cartItemsDiv = document.getElementById('cartItems');
+const checkoutBtn = document.getElementById('checkoutBtn');
+const clearCartBtn = document.getElementById('clearCartBtn');
 
+cartButton.onclick = function() {
+    if (cart.length === 0) {
+        alert('Your cart is empty');
+    } else {
+        let cartContents = '';
+        cart.forEach((item, index) => {
+            cartContents += `<div>${index + 1}. ${item.name} - ${item.price} <button class="remove-item" data-index="${index}">Remove</button></div>`;
+        });
+        cartItemsDiv.innerHTML = cartContents;
+        cartContentsPopup.style.display = 'block';
+    }
+}
+
+const closeCartContents = document.getElementsByClassName('close')[1];
+closeCartContents.onclick = function() {
+    cartContentsPopup.style.display = 'none';
+}
+
+window.onclick = function(event) {
+    if (event.target == cartContentsPopup) {
+        cartContentsPopup.style.display = 'none';
+    }
+}
+
+checkoutBtn.onclick = function() {
+    alert('Proceeding to checkout...');
+    cartContentsPopup.style.display = 'none';
+}
+
+clearCartBtn.onclick = function() {
+    cart = [];
+    updateCartButton();
+    cartItemsDiv.innerHTML = '';
+    alert('Cart has been cleared!');
+}
+
+document.addEventListener('click', function(event) {
+    if (event.target.classList.contains('remove-item')) {
+        const index = event.target.getAttribute('data-index');
+        cart.splice(index, 1);
+        updateCartButton();
+        cartButton.click();
+    }
+});
+</script>
 </body>
 </html>
